@@ -12,6 +12,7 @@ type HorseInformation = {
 }
 
 type RaceInformation = {
+  id: number
   racetext: string
   horsedata: HorseInformation[]
 }
@@ -74,10 +75,14 @@ function App() {
         {racedata.length > 0 &&
           <div>
             {racedata.map((data) => (
-              <div>
+              <div key="data.id">
+              <Box mb="32px">
                 <Text fontSize='xl'>{data.racetext}</Text>
                 {data.horsedata.map((h) => (
                   <Flex align="center" justifyContent="space-between">
+                    <Box>
+                      <Text>{h.id}</Text>
+                    </Box>
                     <Box>
                       <Text>{h.horsename}</Text>
                     </Box>
@@ -92,6 +97,7 @@ function App() {
                     </Box>
                   </Flex>
                 ))}
+              </Box>
               </div>
             ))}
           </div>
