@@ -1,6 +1,6 @@
 import { Button, Box, ChakraProvider, Flex, Input, Text } from '@chakra-ui/react'
 import './App.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {useFormik} from 'formik'
 
 type HorseInformation = {
@@ -45,9 +45,11 @@ function App() {
       }
     }
   })
+/*
   const handlerActionChange = (event : React.ChangeEvent<HTMLInputElement>) => {
     formik.setFieldValue("action", event.target.value)
   }
+*/
 
   return (
     <ChakraProvider>
@@ -72,7 +74,7 @@ function App() {
         {racedata.length > 0 &&
           <div>
             {racedata.map((data) => (
-              <div key={data.id}>
+              <div>
                 <Text fontSize='xl'>{data.racetext}</Text>
                 {data.horsedata.map((h) => (
                   <Flex align="center" justifyContent="space-between">
