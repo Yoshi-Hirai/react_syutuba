@@ -13,7 +13,7 @@ type HorseInformation = {
 
 type RaceInformation = {
   racetext: string
-  horsedata: HorseInformation
+  horsedata: HorseInformation[]
 }
 
 function App() {
