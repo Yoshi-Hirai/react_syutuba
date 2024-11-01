@@ -9,6 +9,7 @@ type HorseInformation = {
   stallionname: string
   bnsname: string
   jockeyname: string
+  optimal: boolean
 }
 
 type RaceInformation = {
@@ -57,7 +58,7 @@ function App() {
       <div>
         <Text fontSize='4xl'>JRA Entries Check</Text>
         <Text>yyyy[開催場所][開催回][開催日]</Text>
-        <Text>01 札幌 02 函館 03 福島 04 中山 05 東京 06 新潟 07 中京 08 京都 09 阪神 10 小倉</Text>
+        <Text>01 札幌 02 函館 03 福島 04 新潟 05 東京 06 中山 07 中京 08 京都 09 阪神 10 小倉</Text>
         <Box mb="16px">
           <form action="" onSubmit={formik.handleSubmit}>
               <div>
@@ -83,8 +84,8 @@ function App() {
                     <Box>
                       <Text>{h.id}</Text>
                     </Box>
-                    <Box>
-                      <Text>{h.horsename}</Text>
+                    <Box bg={h.optimal ? "tomato" : "skyblue"}>
+                      <Text fontWeight={h.optimal ? "bold" : "normal"}>{h.horsename}</Text>
                     </Box>
                     <Box>
                       <Text>{h.stallionname}</Text>
